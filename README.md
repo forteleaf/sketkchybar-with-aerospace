@@ -1,0 +1,1 @@
+# sketkchybar-with-aerospace
