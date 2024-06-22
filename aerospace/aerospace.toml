@@ -199,3 +199,7 @@ run = ['move-node-to-workspace 7']
 if.app-id = 'com.clickup.desktop-app'
 run = ['move-node-to-workspace 7']
 
+
+[[on-window-detected]]
+if.app-id = 'com.apple.weather'
+run = ['layout floating']
