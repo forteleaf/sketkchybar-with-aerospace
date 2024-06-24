@@ -84,5 +84,4 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
 
   sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE display=$AEROSPACE_FOCUSED_MONITOR
 
-
 fi

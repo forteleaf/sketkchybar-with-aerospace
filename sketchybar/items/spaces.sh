@@ -8,7 +8,7 @@
 sketchybar --add event aerospace_workspace_change
 #echo $(aerospace list-workspaces --monitor 1 --visible no --empty no) >> ~/aaaa
 
-for m in $(aerospace list-monitors --focused); do
+for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m); do
     sid=$i
     space=(
