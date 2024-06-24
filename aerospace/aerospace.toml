@@ -157,7 +157,7 @@ alt-shift-semicolon = 'mode service'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 
 # disabled hide window
-# cmd-h = [Æ
+# cmd-h = []
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
