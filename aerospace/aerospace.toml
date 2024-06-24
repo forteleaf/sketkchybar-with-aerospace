@@ -16,7 +16,7 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
-    'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color=0xfff2bfe5 inactive_color=0x20494d64 width=6.0'
+    'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color="grow(0xc0ffb3ba)" inactive_color=0x20494d64 width=8.0'
 ]
 
 exec-on-workspace-change = ['/bin/bash', '-c',
@@ -33,7 +33,7 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 20
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -61,15 +61,15 @@ key-mapping.preset = 'qwerty'
 5 = '^EPSON'
 
 [gaps]
-inner.horizontal = 20
-inner.vertical =   20
+inner.horizontal = 18
+inner.vertical =   18
 outer.left =       10
 outer.bottom =     10
 outer.right =      10
 outer.top = [
-    {monitor."V32UE" = 50},
-    {monitor."^27W" = 50},
-    {monitor."^EPSON" = 50},
+    {monitor."V32UE" = 40},
+    {monitor."^27W" = 40},
+    {monitor."^EPSON" = 40},
     10
 ]
 
@@ -179,9 +179,9 @@ alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 # if.app-id = 'nl.stickybit.OTP-Manager'
 # run = ['layout floating']
 
-[[on-window-detected]]
-if.window-title-regex-substring = '^BIG-IP'
-run = ['layout floating']
+#[[on-window-detected]]
+#if.window-title-regex-substring = '^BIG-IP'
+#run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.kakao.KakaoTalkMac'
@@ -198,7 +198,6 @@ run = ['move-node-to-workspace 7']
 [[on-window-detected]]
 if.app-id = 'com.clickup.desktop-app'
 run = ['move-node-to-workspace 7']
-
 
 [[on-window-detected]]
 if.app-id = 'com.apple.weather'
