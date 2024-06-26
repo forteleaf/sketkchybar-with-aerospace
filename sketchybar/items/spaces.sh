@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #SPACE_ICONS=("1" "2" "3" "4")
 
