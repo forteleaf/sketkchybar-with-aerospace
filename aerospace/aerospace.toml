@@ -16,19 +16,19 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
-    'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color="grow(0xc0ffb3ba)" inactive_color=0x20494d64 width=8.0'
+    'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color="glow(0xc0ffb3ba)" inactive_color=0x20494d64 width=8.0'
 ]
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
-]
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#     '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+# ]
 
 # Start AeroSpace at login
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
@@ -57,8 +57,10 @@ key-mapping.preset = 'qwerty'
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'V32UE'
-3 = '^27W'
-5 = '^EPSON'
+3 = 'V32UE'
+4 = '^27W'
+5 = 'V32UE'
+9 = '^EPSON'
 
 [gaps]
 inner.horizontal = 18
@@ -131,8 +133,8 @@ alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
-# alt-8 = 'workspace 8'
-# alt-9 = 'workspace 9'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -142,8 +144,8 @@ alt-shift-4 = 'move-node-to-workspace 4'
 alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
-# alt-shift-8 = 'move-3ode-to-workspace 8'
-# alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -158,6 +160,7 @@ alt-shift-semicolon = 'mode service'
 
 # disabled hide window
 # cmd-h = []
+# rotate hangul and english
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
@@ -197,7 +200,7 @@ run = ['move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-id = 'com.clickup.desktop-app'
-run = ['move-node-to-workspace 7']
+run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.weather'
