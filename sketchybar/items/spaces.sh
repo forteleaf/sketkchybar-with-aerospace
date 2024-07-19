@@ -46,11 +46,11 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       icon_strip=" —"
     fi
 
-    sketchybar --animate sin 10 --set space.$sid label="$icon_strip"
+    sketchybar --set space.$sid label="$icon_strip"
   done
 
   for i in $(aerospace list-workspaces --monitor $m --empty); do
-    sketchybar --animate sin 10 --set space.$i display=0
+    sketchybar --set space.$i display=0
   done
   
 done

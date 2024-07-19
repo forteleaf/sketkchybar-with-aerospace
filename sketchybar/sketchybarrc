@@ -9,6 +9,10 @@ PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are st
 FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3 # All paddings use this value (icon, label, background)
 
+# aerospace setting
+AEROSPACE_FOCUSED_MONITOR_NO=$(aerospace list-workspaces --focused)
+AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=$(aerospace list-windows --workspace $AEROSPACE_FOCUSED_MONITOR_NO | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+
 # Setting up and starting the helper process
 HELPER=git.felix.helper
 killall helper
@@ -49,6 +53,9 @@ defaults=(
   label.color=$LABEL_COLOR
   label.padding_left=$PADDINGS
   label.padding_right=$PADDINGS
+  label.shadow.drawing=on
+  label.shadow.distance=2
+  label.shadow.color=0xff000000
   padding_right=$PADDINGS
   padding_left=$PADDINGS
   background.height=26
