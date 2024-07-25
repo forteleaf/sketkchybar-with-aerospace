@@ -27,8 +27,8 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
@@ -71,6 +71,7 @@ outer.top = [
     {monitor."V32UE" = 40},
     {monitor."^27W" = 40},
     {monitor."^EPSON" = 40},
+    {monitor."^Smart TV" = 40},
     5
 ]
 outer.left =       15
@@ -112,10 +113,10 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-h = 'focus left --boundaries all-monitors-outer-frame'
+alt-j = 'focus down --boundaries all-monitors-outer-frame'
+alt-k = 'focus up --boundaries all-monitors-outer-frame'
+alt-l = 'focus right --boundaries all-monitors-outer-frame'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -140,16 +141,16 @@ alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-0 = 'move-node-to-workspace 10'
+alt-shift-1 = [ 'move-node-to-workspace 1' , 'workspace 1' ]
+alt-shift-2 = [ 'move-node-to-workspace 2' , 'workspace 2' ]
+alt-shift-3 = [ 'move-node-to-workspace 3' , 'workspace 3' ]
+alt-shift-4 = [ 'move-node-to-workspace 4' , 'workspace 4' ]
+alt-shift-5 = [ 'move-node-to-workspace 5' , 'workspace 5' ]
+alt-shift-6 = [ 'move-node-to-workspace 6' , 'workspace 6' ]
+alt-shift-7 = [ 'move-node-to-workspace 7' , 'workspace 7' ]
+alt-shift-8 = [ 'move-node-to-workspace 8' , 'workspace 8' ]
+alt-shift-9 = [ 'move-node-to-workspace 9' , 'workspace 9' ]
+alt-shift-0 = [ 'move-node-to-workspace 10', 'workspace 10' ]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -207,9 +208,14 @@ if.app-id = 'com.clickup.desktop-app'
 run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
+if.app-id = "md.obsidian"
+run = ['move-node-to-workspace 9']
+
+[[on-window-detected]]
 if.app-id = 'com.apple.weather'
 run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.dygmalab.bazecor'
 run = ['layout floating']
+
