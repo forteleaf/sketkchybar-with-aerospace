@@ -33,10 +33,6 @@ Next, after downloading the source, copy each file into the ~/.config/ folder.
 
 ```bash
 brew install --cask font-sf-pro
-
-git clone https://github.com/kvndrsslr/sketchybar-app-font.git
-npm install
-npm run build:install
 ```
 
 ## configure 
