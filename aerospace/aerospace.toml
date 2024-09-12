@@ -47,6 +47,12 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 key-mapping.preset = 'qwerty'
 
+# Mouse follows focus when focused monitor changes
+# Drop it from your config, if you don't like this behavior
+# See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
+# See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
@@ -67,11 +73,24 @@ outer.left =       10
 outer.bottom =     10
 outer.right =      10
 outer.top = [
+<<<<<<< Updated upstream
     {monitor."V32UE" = 40},
     {monitor."^27W" = 40},
     {monitor."^EPSON" = 40},
     10
 ]
+=======
+    {monitor."main" = 10},
+    #    {monitor."V32UE" = 40},
+    #    {monitor."^27W" = 40},
+    #    {monitor."^EPSON" = 40},
+    #    {monitor."^Smart TV" = 40},
+    40
+]
+outer.left =       10
+outer.bottom =     10
+outer.right =      10
+>>>>>>> Stashed changes
 
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
 [exec]                   # Again, you don't need to copy all config sections to your config.
@@ -202,3 +221,14 @@ run = ['move-node-to-workspace 7']
 [[on-window-detected]]
 if.app-id = 'com.apple.weather'
 run = ['layout floating']
+<<<<<<< Updated upstream
+=======
+
+[[on-window-detected]]
+if.app-id = 'com.dygmalab.bazecor'
+run = ['layout floating']
+
+#[[on-window-detected]]
+#if.app-id = 'nl.stickybit.OTP-Manager'
+#run = ['layout floating']
+>>>>>>> Stashed changes

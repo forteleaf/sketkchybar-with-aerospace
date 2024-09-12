@@ -26,12 +26,12 @@ bar=(
   border_color=$BAR_BORDER_COLOR
   shadow=off
   position=top
-  sticky=on
+  #sticky=on
   padding_right=10
   padding_left=10
   y_offset=-5
   margin=-2
-  topmost=window
+  #topmost=window
   color=0x00000000
   border_color=0x00000000
 )
@@ -83,6 +83,7 @@ source "$ITEM_DIR/battery.sh"
 #source "$ITEM_DIR/brew.sh"
 #source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/svim.sh"
 

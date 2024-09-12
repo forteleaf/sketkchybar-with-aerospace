@@ -84,4 +84,6 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
 
   sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE display=$AEROSPACE_FOCUSED_MONITOR
 
+  $CONFIG_DIR/plugins/hide_bar_when_fullscreen.sh
+
 fi
