@@ -73,13 +73,6 @@ outer.left =       10
 outer.bottom =     10
 outer.right =      10
 outer.top = [
-<<<<<<< Updated upstream
-    {monitor."V32UE" = 40},
-    {monitor."^27W" = 40},
-    {monitor."^EPSON" = 40},
-    10
-]
-=======
     {monitor."main" = 10},
     #    {monitor."V32UE" = 40},
     #    {monitor."^27W" = 40},
@@ -87,10 +80,6 @@ outer.top = [
     #    {monitor."^Smart TV" = 40},
     40
 ]
-outer.left =       10
-outer.bottom =     10
-outer.right =      10
->>>>>>> Stashed changes
 
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
 [exec]                   # Again, you don't need to copy all config sections to your config.
@@ -221,8 +210,6 @@ run = ['move-node-to-workspace 7']
 [[on-window-detected]]
 if.app-id = 'com.apple.weather'
 run = ['layout floating']
-<<<<<<< Updated upstream
-=======
 
 [[on-window-detected]]
 if.app-id = 'com.dygmalab.bazecor'
@@ -231,4 +218,3 @@ run = ['layout floating']
 #[[on-window-detected]]
 #if.app-id = 'nl.stickybit.OTP-Manager'
 #run = ['layout floating']
->>>>>>> Stashed changes
