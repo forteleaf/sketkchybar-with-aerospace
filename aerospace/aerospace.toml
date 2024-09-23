@@ -16,11 +16,13 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
-    'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color="grow(0xc0ffb3ba)" inactive_color=0x20494d64 width=8.0'
+    'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color="grow(0xc0ffb3ba)" inactive_color=0x20494d64 width=8.0',
 ]
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+exec-on-workspace-change = [
+    '/bin/bash',
+    '-c',
+    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
 ]
 
 # Start AeroSpace at login
@@ -63,28 +65,25 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'main'
-8 = 'main'
 3 = 'V32UE'
 4 = 'V32UE'
 5 = 'V32UE|^EPSON'
 6 = '^27W'
 7 = '^27W'
+8 = 'main'
 
 [gaps]
 inner.horizontal = 18
-inner.vertical =   18
-outer.left =       10
-outer.bottom =     10
-outer.right =      10
-outer.top = [
-    {monitor."main" = 10},
-    40
-]
+inner.vertical = 18
+outer.left = 10
+outer.bottom = 10
+outer.right = 10
+outer.top = [{ monitor."main" = 10 }, 40]
 
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
-[exec]                   # Again, you don't need to copy all config sections to your config.
-inherit-env-vars = true  # If you don't touch "exec" section,
-[exec.env-vars]          # it will fallback to "default-config.toml"
+[exec] # Again, you don't need to copy all config sections to your config.
+inherit-env-vars = true # If you don't touch "exec" section,
+[exec.env-vars] # it will fallback to "default-config.toml"
 PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 
 # 'main' binding mode declaration
@@ -116,10 +115,10 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-h = 'focus left --boundaries all-monitors-outer-frame'
+alt-j = 'focus down --boundaries all-monitors-outer-frame'
+alt-k = 'focus up --boundaries all-monitors-outer-frame'
+alt-l = 'focus right --boundaries all-monitors-outer-frame'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -139,8 +138,8 @@ alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
-# alt-8 = 'workspace 8'
-# alt-9 = 'workspace 9'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -150,8 +149,8 @@ alt-shift-4 = 'move-node-to-workspace 4'
 alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
-# alt-shift-8 = 'move-3ode-to-workspace 8'
-# alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-8 = 'move-3ode-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -171,8 +170,14 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-alt-shift-semicolon = ['fullscreen', 'mode main'] # Toggle between floating and tiling layout
+f = [
+    'layout floating tiling',
+    'mode main',
+] # Toggle between floating and tiling layout
+alt-shift-semicolon = [
+    'fullscreen',
+    'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
