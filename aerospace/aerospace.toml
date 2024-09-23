@@ -19,8 +19,10 @@ after-startup-command = [
     # 'exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color="glow(0xd943ff64)" inactive_color=0x20494d64 width=8.0'
 ]
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+exec-on-workspace-change = [
+    '/bin/bash',
+    '-c',
+    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
 ]
 
 # Start AeroSpace at login
@@ -66,22 +68,17 @@ key-mapping.preset = 'qwerty'
 
 [gaps]
 inner.horizontal = 20
-inner.vertical =   20
-outer.top = [
-    {monitor."V32UE" = 40},
-    {monitor."^27W" = 40},
-    {monitor."^EPSON" = 40},
-    {monitor."^Smart TV" = 40},
-    5
-]
-outer.left =       15
-outer.bottom =     15
-outer.right =      15
+inner.vertical = 20
+outer.top = [{ monitor."main" = 5 }, 40]
+outer.left = 15
+outer.bottom = 15
+outer.right = 15
 
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
-[exec]                   # Again, you don't need to copy all config sections to your config.
-inherit-env-vars = true  # If you don't touch "exec" section,
-[exec.env-vars]          # it will fallback to "default-config.toml"
+[exec] # Again, you don't need to copy all config sections to your config.
+inherit-env-vars = true # If you don't touch "exec" section,
+
+[exec.env-vars] # it will fallback to "default-config.toml"
 PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 
 # 'main' binding mode declaration
@@ -141,16 +138,16 @@ alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = [ 'move-node-to-workspace 1' , 'workspace 1' ]
-alt-shift-2 = [ 'move-node-to-workspace 2' , 'workspace 2' ]
-alt-shift-3 = [ 'move-node-to-workspace 3' , 'workspace 3' ]
-alt-shift-4 = [ 'move-node-to-workspace 4' , 'workspace 4' ]
-alt-shift-5 = [ 'move-node-to-workspace 5' , 'workspace 5' ]
-alt-shift-6 = [ 'move-node-to-workspace 6' , 'workspace 6' ]
-alt-shift-7 = [ 'move-node-to-workspace 7' , 'workspace 7' ]
-alt-shift-8 = [ 'move-node-to-workspace 8' , 'workspace 8' ]
-alt-shift-9 = [ 'move-node-to-workspace 9' , 'workspace 9' ]
-alt-shift-0 = [ 'move-node-to-workspace 10', 'workspace 10' ]
+alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
+alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+alt-shift-0 = ['move-node-to-workspace 10', 'workspace 10']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -171,8 +168,14 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-alt-shift-semicolon = ['fullscreen', 'mode main'] # Toggle between floating and tiling layout
+f = [
+    'layout floating tiling',
+    'mode main',
+] # Toggle between floating and tiling layout
+alt-shift-semicolon = [
+    'fullscreen',
+    'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
@@ -218,4 +221,3 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.dygmalab.bazecor'
 run = ['layout floating']
-
