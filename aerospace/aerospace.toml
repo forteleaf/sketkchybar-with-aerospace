@@ -198,19 +198,19 @@ alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 
 [[on-window-detected]]
 if.app-id = 'com.kakao.KakaoTalkMac'
-run = ['move-node-to-workspace 6']
+run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.tdesktop.Telegram'
-run = ['move-node-to-workspace 6']
+run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = ['move-node-to-workspace 7']
+run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.clickup.desktop-app'
-run = ['move-node-to-workspace 7']
+run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.weather'
