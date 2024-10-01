@@ -79,7 +79,7 @@ inner.vertical = 18
 outer.left = 10
 outer.bottom = 10
 outer.right = 10
-outer.top = [{ monitor."main" = 10 }, 40]
+outer.top = [{ monitor.V32UE = 40 }, { monitor.main = 5 }, 40]
 
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
 [exec] # Again, you don't need to copy all config sections to your config.

@@ -5,6 +5,7 @@
 # Destroy space on right click, focus space on left click.
 # New space by left clicking separator (>)
 
+# EVENTS
 sketchybar --add event aerospace_workspace_change
 #echo $(aerospace list-workspaces --monitor 1 --visible no --empty no) >> ~/aaaa
 
@@ -36,12 +37,11 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
 
     apps=$(aerospace list-windows --workspace $sid | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
-    icon_strip=" "
-    if [ "${apps}" != "" ]; then
-      while read -r app
-      do
+    if [ -n "${apps}" ]; then
+      icon_strip=" "
+      for app in $apps; do
         icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
-      done <<< "${apps}"
+      done
     else
       icon_strip=" —"
     fi
@@ -69,6 +69,7 @@ space_creator=(
   icon.color=$WHITE
 )
 
+# yabai: Create new space
 # sketchybar --add item space_creator left               \
 #            --set space_creator "${space_creator[@]}"   \
 #            --subscribe space_creator space_windows_change
