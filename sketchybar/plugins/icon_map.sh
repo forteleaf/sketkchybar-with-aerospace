@@ -597,6 +597,9 @@ function __icon_map() {
    "企业微信" | "WeCom")
         icon_result=":wecom:"
         ;;
+   "Waterfox")
+        icon_result=":firefox:"
+        ;;
    "WezTerm")
         icon_result=":wezterm:"
         ;;
