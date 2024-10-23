@@ -1,3 +1,6 @@
+
+source "$CONFIG_DIR/colors.sh"
+
 sketchybar --set $NAME \
   label="Loading..." \
   icon.color=0xff5edaff

@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-strDate=date +"%Y/%m/%d %H:%M:%S --- "
-
-echo $strDate \$FOCUSED_WORKSPACE: $FOCUSED_WORKSPACE >> ~/aaaa
-echo $strDate \$NAME: $NAME >> ~/aaaa
-echo $strDate \$1: $1 >> ~/aaaa
+# strDate=date +"%Y/%m/%d %H:%M:%S --- "
+# echo $strDate \$FOCUSED_WORKSPACE: $FOCUSED_WORKSPACE >> ~/aaaa
+# echo $strDate \$NAME: $NAME >> ~/aaaa
+# echo $strDate \$1: $1 >> ~/aaaa
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
     sketchybar --set $NAME background.drawing=on
 else

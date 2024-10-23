@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source "$CONFIG_DIR/colors.sh"
+
 volume_slider=(
   script="$PLUGIN_DIR/volume.sh"
   updates=on
