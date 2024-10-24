@@ -69,8 +69,8 @@ on-focus-changed = ['move-mouse window-lazy-center']
 3 = 'V32UE'
 4 = 'V32UE'
 5 = 'V32UE|^EPSON'
-6 = '^27W'
-7 = '^27W'
+6 = '^27W|^Smart TV'
+7 = '^27W|^Smart TV'
 8 = 'main'
 
 [gaps]
