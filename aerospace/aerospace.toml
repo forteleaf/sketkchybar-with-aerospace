@@ -69,8 +69,10 @@ on-focus-changed = ['move-mouse window-lazy-center']
 3 = 'V32UE'
 4 = 'V32UE'
 5 = 'V32UE'
-6 = '^27W|^Smart TV|^EPSON'
+6 = 'V32UE'
 7 = '^27W|^Smart TV|^EPSON'
+8 = '^27W|^Smart TV|^EPSON'
+9 = 'main'
 
 [gaps]
 inner.horizontal = 18
@@ -198,15 +200,15 @@ alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 
 [[on-window-detected]]
 if.app-id = 'com.kakao.KakaoTalkMac'
-run = ['move-node-to-workspace 8']
+run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
 if.app-id = 'com.tdesktop.Telegram'
-run = ['move-node-to-workspace 8']
+run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = ['move-node-to-workspace 8']
+run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
 if.app-id = 'com.clickup.desktop-app'
