@@ -7,7 +7,8 @@
 
 # EVENTS
 sketchybar --add event aerospace_workspace_change
-#echo $(aerospace list-workspaces --monitor 1 --visible no --empty no) >> ~/aaaa
+# echo $(aerospace list-workspaces --monitor 1 --visible no --empty no) >> ~/aaaa
+echo "sender: $SENDER" >> ~/aaaa 
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m); do
@@ -38,19 +39,16 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     apps=$(aerospace list-windows --workspace $sid | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
     if [ -n "${apps}" ]; then
-      icon_strip=" "
-      for app in $apps; do
-        icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
-      done
+      icon_strip=$(echo "$apps" | xargs -I{} $CONFIG_DIR/plugins/icon_map.sh "{}" | tr '\n' ' ')
     else
       icon_strip=" —"
     fi
 
-    sketchybar --animate sin 10 --set space.$sid label="$icon_strip"
+    sketchybar --animate tanh 30 --set space.$sid label="$icon_strip"
   done
 
   for i in $(aerospace list-workspaces --monitor $m --empty); do
-    sketchybar --animate sin 10 --set space.$i display=0
+    sketchybar --animate tanh 30 --set space.$i display=0
   done
   
 done
