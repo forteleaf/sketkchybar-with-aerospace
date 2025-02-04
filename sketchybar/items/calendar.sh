@@ -9,6 +9,8 @@ calendar=(
   update_freq=30
   script="$PLUGIN_DIR/calendar.sh"
   click_script="$PLUGIN_DIR/zen.sh"
+  background.color=$COLOR_BL
+  background.border_color=$COLOR_BLUE
 )
 
 sketchybar --add item calendar right       \

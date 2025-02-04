@@ -8,7 +8,7 @@
 # EVENTS
 sketchybar --add event aerospace_workspace_change
 # echo $(aerospace list-workspaces --monitor 1 --visible no --empty no) >> ~/aaaa
-echo "sender: $SENDER" >> ~/aaaa 
+# echo "sender: $SENDER $NAME" >> ~/aaaa 
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m); do
@@ -78,3 +78,5 @@ sketchybar --add item space_creator left               \
 # sketchybar  --add item change_windows left \
 #             --set change_windows script="$PLUGIN_DIR/change_windows.sh" \
 #             --subscribe change_windows space_changes
+
+

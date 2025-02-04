@@ -21,6 +21,7 @@ PADDINGS=4
 # Setting up the general bar appearance of the bar
 bar=(
   color=$TRANSPARENT
+  # color=$COLOR_BL2
   height=30 
   y_offset=4 
   padding_left=4 
@@ -39,9 +40,11 @@ defaults=(
   padding_right=4 
   
   background.border_color=$COLOR_WHITE_BRIGHT 
+  # background.color=$BACKGROUND_1
+  # background.border_color=$BACKGROUND_2
   background.border_width=2 
   background.height=26
-  background.corner_radius=12 
+  background.corner_radius=8
   
   icon.color=$COLOR_WHITE_BRIGHT 
   icon.highlight_color=$COLOR_BACKGROUND 
