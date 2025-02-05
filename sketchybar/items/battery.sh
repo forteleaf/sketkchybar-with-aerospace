@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 battery=(
   script="$PLUGIN_DIR/battery.sh"
@@ -11,6 +11,5 @@ battery=(
 )
 sketchybar --add item battery right \
            --set battery "${battery[@]}" \
-           --subscribe battery power_source_change \
-           mouse.clicked
+           --subscribe battery power_source_change system_woke
 
