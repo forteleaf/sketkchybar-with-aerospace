@@ -22,13 +22,13 @@ PADDINGS=4
 bar=(
   color=$TRANSPARENT
   # color=$COLOR_BL2
-  height=30 
-  y_offset=4 
-  padding_left=4 
-  padding_right=6 
-  corner_radius=18 
-  topmost=off 
-  margin=4 
+  height=30
+  y_offset=4
+  padding_left=4
+  padding_right=6
+  corner_radius=18
+  topmost=off
+  margin=50
   position=top
 )
 
@@ -83,10 +83,14 @@ menu_item_defaults=(
 
 
 ############################# Left ########################
-source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
+# source "$ITEM_DIR/apple.sh"
+# aerospace spaces.sh
+# source "$ITEM_DIR/spaces.sh"
+
+# yabai spaces.sh
+source "$ITEM_DIR/yabai_spaces.sh"
 source "$ITEM_DIR/front_app.sh"
-#source "$ITEM_DIR/yabai.sh"
+source "$ITEM_DIR/yabai.sh"
 
 ############################# Center ########################
 # source "$ITEM_DIR/spotify.sh"
@@ -94,16 +98,13 @@ source "$ITEM_DIR/front_app.sh"
 
 ############################# Right ########################
 source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/keyboard.sh"
 source "$ITEM_DIR/battery.sh"
-#source "$ITEM_DIR/brew.sh"
-#source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/volume.sh"
 
 source "$ITEM_DIR/weather.sh"
-
-source "$ITEM_DIR/keyboard.sh"
 
 sketchybar --hotload on
 
