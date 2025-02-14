@@ -202,4 +202,5 @@ alt + shift - 9 : yabai -m window --space 9 --focus
 
 # open a new iTerm window
 # alt - return : osascript -e 'tell application "wezterm" to create window with default profile command ""' || open -na alacritty
+cmd + ctrl + alt - return : open -na wezterm
 

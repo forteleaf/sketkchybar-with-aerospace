@@ -30,7 +30,7 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 yabai -m config                                 \
     external_bar                 off:40:0       \
     menubar_opacity              1.0            \
-    mouse_follows_focus          on             \
+    mouse_follows_focus          off            \
     focus_follows_mouse          autoraise      \
     display_arrangement_order    default        \
     window_origin_display        default        \
@@ -48,7 +48,7 @@ yabai -m config                                 \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  14             \
+    top_padding                  12             \
     bottom_padding               14             \
     left_padding                 14             \
     right_padding                14             \
@@ -59,14 +59,17 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
+yabai -m config external_bar all:30:0
+
 yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow)$" manage=off
-yabai -m rule --add title="^(Tip of the Day)$" manage=off
+yabai -m rule --add title="^(Tip of the Day|Settings)$" manage=off
 
 yabai -m rule --add app="^Microsoft Teams$" space=1
 yabai -m rule --add app="^IntelliJ IDEA$" space=5
 yabai -m rule --add app="^DataGrip$" space=6
-yabai -m rule --add app="^KakaoTalk$" space=3
-tabai -m rule --add app="^Discord$" space=3
+yabai -m rule --add app="^KakaoTalk$" title="^KakaoTalk$" space=3
+yabai -m rule --add app="^KakaoTalk$" title="^Settings$" space=3 manage=off
+yabai -m rule --add app="^Discord$" space=3
 yabai -m rule --add app="^Telegram$" space=3
 
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
