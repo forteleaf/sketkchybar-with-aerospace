@@ -61,14 +61,15 @@ yabai -m config                                 \
 
 yabai -m config external_bar all:30:0
 
-yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow)$" manage=off
+yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager)$" manage=off
 yabai -m rule --add title="^(Tip of the Day|Settings)$" manage=off
 
 yabai -m rule --add app="^Microsoft Teams$" space=1
 yabai -m rule --add app="^IntelliJ IDEA$" space=5
+yabai -m rule --add app="^IntelliJ IDEA$" title="^Update Project$" manage=off
+yabai -m rule --add app="^Firefox$" space=4
 yabai -m rule --add app="^DataGrip$" space=6
-yabai -m rule --add app="^KakaoTalk$" title="^KakaoTalk$" space=3
-yabai -m rule --add app="^KakaoTalk$" title="^Settings$" space=3 manage=off
+yabai -m rule --add app="^KakaoTalk$" space=3
 yabai -m rule --add app="^Discord$" space=3
 yabai -m rule --add app="^Telegram$" space=3
 
