@@ -127,10 +127,10 @@ alt + shift - l : yabai -m window --swap east
 # cmd + shift - s : yabai -m window --resize bottom:0:-48
 
 # resize window (increase/decrease) using a single key combination
-ctrl + cmd - h : yabai -m window west --resize right:-80:0 || yabai -m window --resize right:-80:0
-ctrl + cmd - j : yabai -m window north --resize bottom:0:80 || yabai -m window --resize bottom:0:80
-ctrl + cmd - k : yabai -m window south --resize top:0:-80 || yabai -m window --resize top:0:-80
-ctrl + cmd - l : yabai -m window east --resize left:80:0 || yabai -m window --resize left:80:0
+ctrl + cmd - h : yabai -m window west --resize right:-40:0 || yabai -m window --resize right:-40:0
+ctrl + cmd - j : yabai -m window north --resize bottom:0:40 || yabai -m window --resize bottom:0:40
+ctrl + cmd - k : yabai -m window south --resize top:0:-40 || yabai -m window --resize top:0:-40
+ctrl + cmd - l : yabai -m window east --resize left:40:0 || yabai -m window --resize left:40:0
 
 # toggle window zoom
 alt - d : yabai -m window --toggle zoom-parent
