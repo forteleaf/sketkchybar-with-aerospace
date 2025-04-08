@@ -28,7 +28,7 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 #
 # global settings
 yabai -m config                                 \
-    external_bar                 all:30:0       \
+    external_bar                 all:40:0       \
     menubar_opacity              1.0            \
     mouse_follows_focus          off            \
     focus_follows_mouse          autoraise      \
@@ -49,10 +49,10 @@ yabai -m config                                 \
     split_type                   auto           \
     auto_balance                 off            \
     top_padding                  12             \
-    bottom_padding               14             \
-    left_padding                 14             \
-    right_padding                14             \
-    window_gap                   18             \
+    bottom_padding               12             \
+    left_padding                 12             \
+    right_padding                12             \
+    window_gap                   12             \
     layout                       bsp            \
     mouse_modifier               fn             \
     mouse_action1                move           \
