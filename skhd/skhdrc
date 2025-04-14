@@ -142,7 +142,8 @@ shift + alt - 0 : yabai -m space --balance
 # -----------------------------------------------------------------------------
 
 # float / unfloat window and center on screen
-alt - t : yabai -m window --toggle float --grid 8:8:1:1:6:6
+# alt - t : yabai -m window --toggle float --grid 8:8:1:1:6:6
+alt - t : yabai -m window --toggle float
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip

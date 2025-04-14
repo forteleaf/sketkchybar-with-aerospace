@@ -27,12 +27,17 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 #yabai -m signal --add event='space_changed' action="${action}"
 #
 # global settings
+#
+# focus_follows_mouse
+# - autofocus: 윈도우에 자동으로 포커스 이동
+# - autoraise: 해당 윈도우를 가장 앞으로 가져옴
+
 yabai -m config                                 \
     external_bar                 all:40:0       \
     menubar_opacity              1.0            \
-    mouse_follows_focus          off            \
-    focus_follows_mouse          autoraise      \
     display_arrangement_order    default        \
+    mouse_follows_focus          on             \
+    focus_follows_mouse          autofocus      \
     window_origin_display        default        \
     window_placement             second_child   \
     window_insertion_point       focused        \
@@ -67,7 +72,7 @@ yabai -m rule --add app="^Discord$" space=1
 yabai -m rule --add app="^Telegram$" space=1
 # yabai -m rule --add app="^IntelliJ IDEA$" space=5
 yabai -m rule --add app="^IntelliJ IDEA$" title="^Update Project$" manage=off
-yabai -m rule --add app="^DataGrip$" space=6
+# yabai -m rule --add app="^DataGrip$"
 # yabai -m rule --add app="^KakaoTalk$" space=3
 
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
