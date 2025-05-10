@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
- 
+
 echo AEROSPACE_PREV_WORKSPACE: $AEROSPACE_PREV_WORKSPACE, \
  AEROSPACE_FOCUSED_WORKSPACE: $AEROSPACE_FOCUSED_WORKSPACE \
  SELECTED: $SELECTED \
@@ -10,6 +10,12 @@ echo AEROSPACE_PREV_WORKSPACE: $AEROSPACE_PREV_WORKSPACE, \
   >> ~/aaaa
 
 source "$CONFIG_DIR/colors.sh"
+
+declare -A monitors
+map=( $(aerospace list-monitors --format '%{monitor-id} %{monitor-appkit-nsscreen-screens-id}') )
+for ((i=0; i<${#map[@]}; i+=2)); do
+  monitors[${map[i]}]=${map[i+1]}
+done
 
 AEROSPACE_FOCUSED_MONITOR=$(aerospace list-monitors --focused | awk '{print $1}')
 AEROSAPCE_WORKSPACE_FOCUSED_MONITOR=$(aerospace list-workspaces --monitor focused --empty no)
@@ -75,13 +81,16 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
   # fi
   ## focused 된 모니터에 space 상태 보이게 설정
   for i in $AEROSAPCE_WORKSPACE_FOCUSED_MONITOR; do
-    sketchybar --set space.$i display=$AEROSPACE_FOCUSED_MONITOR
+    sketchybar --set space.$i display=${monitors["$AEROSPACE_FOCUSED_MONITOR"]}
   done
 
   for i in $AEROSPACE_EMPTY_WORKESPACE; do
+    if [ "$i" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
+      continue
+    fi
     sketchybar --set space.$i display=0
   done
 
-  sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE display=$AEROSPACE_FOCUSED_MONITOR
+  sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE display=${monitors["$AEROSPACE_FOCUSED_MONITOR"]}
 
 fi
