@@ -39,6 +39,7 @@ reload_workspace_icon() {
 }
 
 if [ "$SENDER" = "aerospace_workspace_change" ]; then
+  batched=""
 
   # if [ $i = "$FOCUSED_WORKSPACE" ]; then
   #   sketchybar --set space.$FOCUSED_WORKSPACE background.drawing=on
@@ -67,30 +68,33 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
   #sketchybar --animate sin 10 --set space.$space label="$icon_strip"
 
   # current workspace space border color
-  sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE icon.highlight=true \
+  batched+=" --set space.$AEROSPACE_FOCUSED_WORKSPACE icon.highlight=true \
                          label.highlight=true \
-                         background.border_color=$GREY
+                         background.border_color=$GREY"
 
   # prev workspace space border color
-  sketchybar --set space.$AEROSPACE_PREV_WORKSPACE icon.highlight=false \
+  batched+=" --set space.$AEROSPACE_PREV_WORKSPACE icon.highlight=false \
                          label.highlight=false \
-                         background.border_color=$BACKGROUND_2
+                         background.border_color=$BACKGROUND_2"
 
   # if [ "$AEROSPACE_FOCUSED_WORKSPACE" -gt 3 ]; then
   #   sketchybar --animate sin 10 --set space.$AEROSPACE_FOCUSED_WORKSPACE display=1
   # fi
   ## focused 된 모니터에 space 상태 보이게 설정
+
   for i in $AEROSAPCE_WORKSPACE_FOCUSED_MONITOR; do
-    sketchybar --set space.$i display=${monitors["$AEROSPACE_FOCUSED_MONITOR"]}
+    batched+=" --set space.$i display=${monitors[$AEROSPACE_FOCUSED_MONITOR]}"
   done
 
   for i in $AEROSPACE_EMPTY_WORKESPACE; do
     if [ "$i" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
       continue
     fi
-    sketchybar --set space.$i display=0
+    batched+=" --set space.$i display=0"
   done
 
-  sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE display=${monitors["$AEROSPACE_FOCUSED_MONITOR"]}
+  batched+=" --set space.$AEROSPACE_FOCUSED_WORKSPACE display=${monitors[$AEROSPACE_FOCUSED_MONITOR]}"
+
+  sketchybar $batched
 
 fi
