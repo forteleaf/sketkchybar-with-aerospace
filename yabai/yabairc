@@ -59,13 +59,13 @@ yabai -m config                                 \
     right_padding                12             \
     window_gap                   12             \
     layout                       bsp            \
-    mouse_modifier               shift+alt             \
+    mouse_modifier               cmd             \
     mouse_action1                move           \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
 yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager)$" manage=off
-yabai -m rule --add title="^(Tip of the Day|Settings)$" manage=off
+yabai -m rule --add title="^(Tip of the Day|Settings|Google Drive|FortiClient)$" manage=off
 
 yabai -m rule --add app="^Microsoft Teams$" space=1
 yabai -m rule --add app="^Discord$" space=1
