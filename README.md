@@ -35,13 +35,12 @@ Next, after downloading the source, copy each file into the ~/.config/ folder.
 brew install --cask font-sf-pro
 ```
 
-## configure 
+## configure
 
 ```bash
 mv sketchybar ~/.config/sketchybar
 mv aerospace ~/.config/aerospace
 ```
-
 
 # install sketchybar + aerospace
 
@@ -49,9 +48,10 @@ mv aerospace ~/.config/aerospace
 
 with homebrew
 
- ```bash
+```bash
 brew tap FelixKratz/formulaebrew install sketchybar
 brew install sketchbar
+
 ```
 
 ### Hiding the original macOS bar
@@ -59,13 +59,18 @@ brew install sketchbar
 To ensure the bar is clearly visible, you need to hide the default top menu.
 
 - (Pre macOS Ventura) Hide the default macOS menu bar in _System Preferences_ -> _Dock & Menu Bar_: ![hide_macOS_bar](https://felixkratz.github.io/SketchyBar/assets/images/hide_menubar-dda81922d34dda138a2e5f03cfcdc645.png)
-- (macOS Ventura) Hide the default macOS menu bar in _System Settings_ -> _Desktop & Dock_ -> _Automatically hide and show the menu bar_ -> _Always_: ![hide_macOS_bar_ventura](https://felixkratz.github.io/SketchyBar/assets/images/hide_macos_bar_ventura-882e31573dbddc4e65e1c6f47451b693.png) - (macOS Sonoma) Hide the default macOS menu bar in _System Settings_ -> _Control Center_ -> _Automatically hide and show the menu bar_ -> _Always_: ![hide_macOS_bar_sonoma](https://felixkratz.github.io/SketchyBar/assets/images/hide_macos_bar_sonoma-a73b1b7a89a77840c2203cbd2993f4a0.png) 
-
+- (macOS Ventura) Hide the default macOS menu bar in _System Settings_ -> _Desktop & Dock_ -> _Automatically hide and show the menu bar_ -> _Always_: ![hide_macOS_bar_ventura](https://felixkratz.github.io/SketchyBar/assets/images/hide_macos_bar_ventura-882e31573dbddc4e65e1c6f47451b693.png) - (macOS Sonoma) Hide the default macOS menu bar in _System Settings_ -> _Control Center_ -> _Automatically hide and show the menu bar_ -> _Always_: ![hide_macOS_bar_sonoma](https://felixkratz.github.io/SketchyBar/assets/images/hide_macos_bar_sonoma-a73b1b7a89a77840c2203cbd2993f4a0.png)
 
 ## 2. [aerospace](https://nikitabobko.github.io/AeroSpace/guide)
 
 ```bash
 brew install --cask nikitabobko/tap/aerospace
+```
+
+## 3. icon font
+
+```sh
+brew install --cask font-sketchybar-app-font
 ```
 
 ## 3. Optional
@@ -87,6 +92,3 @@ The related configurations are already saved, so you just need to install it.
 brew tap FelixKratz/formulae
 brew install borderszz
 ```
-
-
-
