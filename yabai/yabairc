@@ -59,7 +59,7 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
-yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager)$" manage=off
+yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager|FortiClient)$" manage=off
 yabai -m rule --add title="^(Tip of the Day|Settings)$" manage=off
 
 yabai -m rule --add app="^Microsoft Teams$" space=1
