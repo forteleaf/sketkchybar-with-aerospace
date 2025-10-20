@@ -59,20 +59,26 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
-yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager|FortiClient|VPN Unlimited)$" manage=off
+yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager|FortiClient|VPN Unlimited|Google Drive|The Unarchiver)$" manage=off
 yabai -m rule --add title="^(Tip of the Day|Settings|Modify)$" manage=off
 
 yabai -m rule --add app="^Microsoft Teams$" space=1
 yabai -m rule --add app="^Discord$" space=1
 yabai -m rule --add app="^Telegram$" space=1
+yabai -m rule --add app="^Comet$" space=4
+yabai -m rule --add app="^Firefox" space=4
+yabai -m rule --add app="^Firefox" space=4
+yabai -m rule --add app="^DeepL$" manage=off
+yabai -m rule --add app="^Finder" title="Trash" manage=off
+yabai -m rule --add app="^Mail" title="Accounts" manage=off
+yabai -m rule --add app="^BIG-IP Edge Client$" manage=off
 # yabai -m rule --add app="^IntelliJ IDEA$" space=5
-yabai -m rule --add app="^IntelliJ IDEA$" title="^Update Project$" manage=off
-yabai -m rule --add app="^DataGrip$" space=6
+yabai -m rule --add app="^IntelliJ IDEA$" title="^(Update Project|Delete|Repository |Result |Choose Content|Push Commits|Project Structure)" manage=off
+yabai -m rule --add app="^DataGrip$" title="^(Data Sources and Drivers)$" manage=off
 # yabai -m rule --add app="^KakaoTalk$" space=3
 
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
 yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
-
-#yabai -m signal --add event=application_activated action="yabai -m space --focus $(yabai -m query --windows --window | jq -r '.space')"
+yabai -m signal --add event=application_activated action="$HOME/.config/yabai/focus_application_space.sh"
 
 echo "yabai configuration loaded.."
