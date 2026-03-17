@@ -77,29 +77,29 @@
 # ############################################################### #
 
 # focus window
-alt - h : yabai -m window --focus west || yabai -m display --focus west
-alt - j : yabai -m window --focus south || yabai -m display --focus south
-alt - k : yabai -m window --focus north || yabai -m display --focus north
-alt - l : yabai -m window --focus east || yabai -m display --focus east
+alt - h : yabai -m window --focus west 2>/dev/null || yabai -m display --focus west 2>/dev/null
+alt - j : yabai -m window --focus south 2>/dev/null || yabai -m display --focus south 2>/dev/null
+alt - k : yabai -m window --focus north 2>/dev/null || yabai -m display --focus north 2>/dev/null
+alt - l : yabai -m window --focus east 2>/dev/null || yabai -m display --focus east 2>/dev/null
 
 # fast focus desktop
-alt - 1 : yabai -m space --focus 1
-alt - 2 : yabai -m space --focus 2
-alt - 3 : yabai -m space --focus 3
-alt - 4 : yabai -m space --focus 4
-alt - 5 : yabai -m space --focus 5
-alt - 6 : yabai -m space --focus 6
-alt - 7 : yabai -m space --focus 7
-alt - 8 : yabai -m space --focus 8
-alt - 9 : yabai -m space --focus 9
+alt - 1 : yabai -m space --focus 1 2>/dev/null
+alt - 2 : yabai -m space --focus 2 2>/dev/null
+alt - 3 : yabai -m space --focus 3 2>/dev/null
+alt - 4 : yabai -m space --focus 4 2>/dev/null
+alt - 5 : yabai -m space --focus 5 2>/dev/null
+alt - 6 : yabai -m space --focus 6 2>/dev/null
+alt - 7 : yabai -m space --focus 7 2>/dev/null
+alt - 8 : yabai -m space --focus 8 2>/dev/null
+alt - 9 : yabai -m space --focus 9 2>/dev/null
 # alt - 0 : yabai -m space --focus 10
 
 
 # swap managed window
-alt + shift - h : yabai -m window --swap west
-alt + shift - j : yabai -m window --swap south
-alt + shift - k : yabai -m window --swap north
-alt + shift - l : yabai -m window --swap east
+alt + shift - h : yabai -m window --swap west 2>/dev/null
+alt + shift - j : yabai -m window --swap south 2>/dev/null
+alt + shift - k : yabai -m window --swap north 2>/dev/null
+alt + shift - l : yabai -m window --swap east 2>/dev/null
 
 # move managed window and split
 # cmd + shift - h : yabai -m window --warp west
@@ -127,22 +127,22 @@ alt + shift - l : yabai -m window --swap east
 # cmd + shift - s : yabai -m window --resize bottom:0:-48
 
 # resize window (increase/decrease) using a single key combination
-shift + ctrl + alt - h : yabai -m window west --resize right:-40:0 || yabai -m window --resize right:-40:0
-shift + ctrl + alt - j : yabai -m window north --resize bottom:0:40 || yabai -m window --resize bottom:0:40
-shift + ctrl + alt - k : yabai -m window south --resize top:0:-40 || yabai -m window --resize top:0:-40
-shift + ctrl + alt - l : yabai -m window east --resize left:40:0 || yabai -m window --resize left:40:0
+shift + ctrl + alt - h : yabai -m window west --resize right:-40:0 2>/dev/null || yabai -m window --resize right:-40:0 2>/dev/null
+shift + ctrl + alt - j : yabai -m window north --resize bottom:0:40 2>/dev/null || yabai -m window --resize bottom:0:40 2>/dev/null
+shift + ctrl + alt - k : yabai -m window south --resize top:0:-40 2>/dev/null || yabai -m window --resize top:0:-40 2>/dev/null
+shift + ctrl + alt - l : yabai -m window east --resize left:40:0 2>/dev/null || yabai -m window --resize left:40:0 2>/dev/null
 
 # toggle window zoom
-alt - d : yabai -m window --toggle zoom-parent
-alt - f : yabai -m window --toggle zoom-fullscreen
+alt - d : yabai -m window --toggle zoom-parent 2>/dev/null
+alt - f : yabai -m window --toggle zoom-fullscreen 2>/dev/null
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+shift + alt - 0 : yabai -m space --balance 2>/dev/null
 
 # -----------------------------------------------------------------------------
 
 # float / unfloat window and center on screen
-alt - t : yabai -m window --toggle float --grid 8:8:1:1:6:6
+alt - t : yabai -m window --toggle float --grid 8:8:1:1:6:6 2>/dev/null
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
@@ -173,20 +173,20 @@ alt - t : yabai -m window --toggle float --grid 8:8:1:1:6:6
 
 # toggle window split type
 # alt + /
-alt - 0x2C : yabai -m window --toggle split
+alt - 0x2C : yabai -m window --toggle split 2>/dev/null
 
 # send window to desktop and follow focus
 #alt + shift - z : yabai -m window --space next; yabai -m space --focus prev
 #alt + shift - x : yabai -m window --space next; yabai -m space --focus next
-alt + shift - 1 : yabai -m window --space 1 --focus
-alt + shift - 2 : yabai -m window --space 2 --focus
-alt + shift - 3 : yabai -m window --space 3 --focus
-alt + shift - 4 : yabai -m window --space 4 --focus
-alt + shift - 5 : yabai -m window --space 5 --focus
-alt + shift - 6 : yabai -m window --space 6 --focus
-alt + shift - 7 : yabai -m window --space 7 --focus
-alt + shift - 8 : yabai -m window --space 8 --focus
-alt + shift - 9 : yabai -m window --space 9 --focus
+alt + shift - 1 : yabai -m window --space 1 --focus 2>/dev/null
+alt + shift - 2 : yabai -m window --space 2 --focus 2>/dev/null
+alt + shift - 3 : yabai -m window --space 3 --focus 2>/dev/null
+alt + shift - 4 : yabai -m window --space 4 --focus 2>/dev/null
+alt + shift - 5 : yabai -m window --space 5 --focus 2>/dev/null
+alt + shift - 6 : yabai -m window --space 6 --focus 2>/dev/null
+alt + shift - 7 : yabai -m window --space 7 --focus 2>/dev/null
+alt + shift - 8 : yabai -m window --space 8 --focus 2>/dev/null
+alt + shift - 9 : yabai -m window --space 9 --focus 2>/dev/null
 # alt + shift - 0 : yabai -m window --space 10 --focus
 
 # focus monitor
@@ -204,4 +204,3 @@ alt + shift - 9 : yabai -m window --space 9 --focus
 # alt - return : osascript -e 'tell application "wezterm" to create window with default profile command ""' || open -na alacritty
 #cmd + ctrl + alt - return : open -na wezterm
 cmd + ctrl + alt - return : open -na ghostty
-
