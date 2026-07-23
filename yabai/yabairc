@@ -12,7 +12,7 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus &"
 
 #read -r -d '' action <<- 'EOF'
 #  recent_space_index="$(yabai -m query --spaces | 
@@ -30,28 +30,28 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 yabai -m config                                 \
     external_bar                 all:30:0       \
     menubar_opacity              1.0            \
-    mouse_follows_focus          on             \
-    focus_follows_mouse          autoraise      \
+    mouse_follows_focus          off             \
+    focus_follows_mouse          off      \
     display_arrangement_order    default        \
     window_origin_display        default        \
     window_placement             second_child   \
     window_insertion_point       focused        \
     window_zoom_persist          on             \
     window_shadow                off            \
-    window_animation_duration    0.001          \
+    window_animation_duration    0.0          \
     window_animation_easing      ease_out_circ  \
     window_opacity_duration      0.0            \
-    active_window_opacity        1.0            \
-    normal_window_opacity        0.90           \
     window_opacity               on             \
+    active_window_opacity        1.0            \
+    normal_window_opacity        0.80           \
     insert_feedback_color        0xffd75f5f     \
     split_ratio                  0.618          \
     split_type                   auto           \
     auto_balance                 off            \
     top_padding                  12            \
-    bottom_padding               15             \
-    left_padding                 15             \
-    right_padding                15             \
+    bottom_padding               12             \
+    left_padding                 12             \
+    right_padding                12             \
     window_gap                   15             \
     layout                       bsp            \
     mouse_modifier               fn             \
@@ -59,26 +59,25 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
-yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager|FortiClient|VPN Unlimited|Google Drive|The Unarchiver)$" manage=off
+yabai -m rule --add app="^(System Settings|System Information|Activity Monitor|FaceTime|Screen Sharing|Calculator|Stickies|TinkerTool|Progressive Downloader|Transmission|Airflow|OTP Manager|FortiClient|VPN Unlimited|Google Drive|The Unarchiver|Avast Security)$" manage=off
 yabai -m rule --add title="^(Tip of the Day|Settings|Modify)$" manage=off
 
-yabai -m rule --add app="^Microsoft Teams$" space=1
-yabai -m rule --add app="^Discord$" space=1
-yabai -m rule --add app="^Telegram$" space=1
-yabai -m rule --add app="^Comet$" space=4
-yabai -m rule --add app="^Firefox" space=4
-yabai -m rule --add app="^Firefox" space=4
+yabai -m rule --add app="^(Microsoft Teams|Discord|Telegram)$" space=1
+# yabai -m rule --add app="^(Firefox|Comet)" space=4
+yabai -m rule --add app="^KakaoTalk$" title="^KakaoTalk$" space=1
 yabai -m rule --add app="^DeepL$" manage=off
-yabai -m rule --add app="^Finder" title="Trash" manage=off
-yabai -m rule --add app="^Mail" title="Accounts" manage=off
+yabai -m rule --add app="^Finder" title="^(Trash|Copy)" manage=off
+yabai -m rule --add app="^Mail" title="^(General|Accounts|Composing)$" manage=off
+yabai -m rule --add title="^(General)$" manage=off
 yabai -m rule --add app="^BIG-IP Edge Client$" manage=off
 # yabai -m rule --add app="^IntelliJ IDEA$" space=5
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Update Project|Delete|Repository |Result |Choose Content|Push Commits|Project Structure)" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" role="AXDialog" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" subrole="AXStandardWindow" manage=on
+# yabai -m rule --add app="^IntelliJ IDEA$" title="^(Update Project|Delete|Repository |Result |Choose Content|Push Commits|Project Structure)" manage=off
 yabai -m rule --add app="^DataGrip$" title="^(Data Sources and Drivers)$" manage=off
-# yabai -m rule --add app="^KakaoTalk$" space=3
 
-yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
-yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
-yabai -m signal --add event=application_activated action="$HOME/.config/yabai/focus_application_space.sh"
+yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &"
+yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &"
+# yabai -m signal --add event=application_activated action="$HOME/.config/yabai/focus_application_space.sh"
 
 echo "yabai configuration loaded.."
